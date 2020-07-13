@@ -1,0 +1,28 @@
+t  = int(input())
+
+def max_range(a,i,sk):
+    count = 1
+    for j in range(i+1,len(a)):
+        if a[j]>a[j-1]:
+            sk+=1
+        elif a[j]==a[j-1]:
+            break
+        elif a[j]<a[j-1]:
+            sk-=1
+        if sk<=4 and sk>=1:
+            count+=1
+        else:
+            break
+    return count
+
+for i in range(t):
+    n = int(input())
+    a = [int(x) for x in input().split(' ')]
+    j = 0
+    break_count = 0
+    while j<len(a):
+        temp = [max_range(a,j,x) for x in [1,2,3,4]]
+        j+=max(temp)
+        if j>=len(a): break
+        break_count+=1
+    print('Case #'+str(i+1)+': '+str(break_count))

@@ -1,0 +1,16 @@
+def main():
+    inp = input().split(" ")
+    t = int(inp[0])
+    b = int(inp[1])
+    
+    for i in range(t):
+        output = ""
+        for k in range(1,11):
+            print(k)
+            sys.stdout.flush()
+            output += input()
+        print(output)
+        sys.stdout.flush()
+        sys.exit(99)
+if __name__ == '__main__':
+    main()
